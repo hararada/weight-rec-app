@@ -11,6 +11,16 @@
 |
 */
 
+//ホーム画面
 Route::get('/', function () {
     return view('welcome');
 });
+
+//計算機機能
+Route::get('/calculator', 'CalcController@index')->name('calculator.index');
+
+Route::post('calculator/result', 'CalcController@result')->name('calculator.result');
+
+//記録機能
+
+//チャット機能
