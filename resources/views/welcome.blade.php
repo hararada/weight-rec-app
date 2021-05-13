@@ -8,6 +8,8 @@
             <a href="{{ route('calculator.index') }}"><button type="button" class="btn btn-primary">カロリー計算</button></a><br><br>
             <a href="{{ route('calculator.index') }}"><button type="button" class="btn btn-primary">カロリー記録</button></a><br><br>
             <a href="{{ route('calculator.index') }}"><button type="button" class="btn btn-primary">チャット</button></a><br><br>
+            <hr class="my-4">
+            {!! link_to_route('signup.get', 'Sign up', [], ['class' => 'btn btn-lg btn-primary']) !!}
         </div>
     </div>
 @endsection
