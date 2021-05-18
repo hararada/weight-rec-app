@@ -17,12 +17,12 @@ class CalcController extends Controller
         //バリデーション
         $request->validate([
             'gender' => 'required',
-            'age' => 'required',
-            'height' => 'required',
-            'weight' => 'required',
+            'age' => 'required|integer|max:99',
+            'height' => 'required|integer',
+            'weight' => 'required|integer',
             'worklevel' => 'required',
-            'gweight' => 'required',
-            'day' => 'required',
+            'gweight' => 'required|integer',
+            'day' => 'required|integer',
         ]);
 
         $inputs = $request->all();

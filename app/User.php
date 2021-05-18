@@ -36,4 +36,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function records()
+    {
+        return $this->hasMany(Record::class);
+    }
+
+    /**
+     * このユーザに関係するモデルの件数をロード
+     */
+    public function loadRelationshipCounts()
+    {
+        $this->loadCount('records');
+    }
 }

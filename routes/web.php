@@ -32,5 +32,8 @@ Route::get('/calculator', 'CalcController@index')->name('calculator.index');
 Route::post('calculator/result', 'CalcController@result')->name('calculator.result');
 
 //記録機能
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('records', 'RecordsController');
+});
 
 //チャット機能
