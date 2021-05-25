@@ -20,8 +20,8 @@ class RecordsController extends Controller
     {
         // バリデーション
         $request->validate([
-            'weight' => 'required',
-            'calorie' => 'required',
+            'weight' => 'required|integer',
+            'calorie' => 'required|integer',
         ]);
 
         $request->user()->records()->create([
