@@ -43,10 +43,13 @@ class User extends Authenticatable
     }
 
     /**
-     * このユーザに関係するモデルの件数をロード
+     * A user can have many messages
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function loadRelationshipCounts()
+    public function messages()
     {
-        $this->loadCount('records');
+    return $this->hasMany('App\Message');
     }
+
 }

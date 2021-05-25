@@ -26,14 +26,19 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 
-//計算機機能
+//計算機
 Route::get('/calculator', 'CalcController@index')->name('calculator.index');
 
 Route::post('calculator/result', 'CalcController@result')->name('calculator.result');
 
-//記録機能
+//記録
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('records', 'RecordsController');
 });
 
-//チャット機能
+//チャット
+// Route::group(['middleware' => ['auth']], function () {
+    Route::get('chat', 'ChatsController@index')->name('chat.index');
+    Route::get('messages', 'ChatsController@fetchMessages');
+    Route::post('messages', 'ChatsController@sendMessage');
+// });
